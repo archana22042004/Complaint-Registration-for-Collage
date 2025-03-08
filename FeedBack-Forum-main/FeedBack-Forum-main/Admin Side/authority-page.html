@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+        <link rel="stylesheet" href="authority.css">
+    <title>Authority-LoginPage</title>
+</head>
+<body>
+    <nav class="horizontal-bar">
+        <img src="/Images/website-logo-transBG.png" alt="Feed-back logo">
+        <p class="authority-name"></p>
+    </nav>
+    <div id="admin-profile" class="sidepanel">
+        <a href="javascript:void(0)" class="close-toggle-btn" onclick="closeNav()">&times;</a>
+        <a href="#"><i class="fi fi-sr-user-pen"></i>Edit Profile</a>
+        <a href="../FAQ'S.html"><i class="fi fi-sr-box-tissue"></i>Report Issue</a>
+        <a href="../index.html"><i class="fi fi-br-exit"></i>Logout</a>
+    </div>
+    <button class="open-toggle-btn" onclick="openNav()">&#9776;</button>
+
+    <main class="complaint-table">
+        <section class="page-display">
+            <h2 class="heading">All Complaints</h2>
+        </section>
+        <section class="complaints-display">
+            <table class="main-table">
+                <thead class="header">
+                    <tr>
+                        <th>Complaint ID</th>
+                        <th>Date</th>
+                        <th>Email</th>
+                        <th>Title</th>
+                        <th>Admin Note</th>
+                        <th>Status</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody class="body">
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div class="open-authority-form">
+        <h3>Complaint Details</h3>
+        <button id="close-btn" onclick="closeAuthorityForm()">&times;</button>
+        <form action="">
+            <p class="complaint-id">ID</p>
+            <p class="complaint-date">Date</p>
+            <p class="complaint-email"></p>
+            <p class="complaint-title">Title</p>
+            <p class="complaint-description">Description</p>
+            <p class="admin-note">AdminNote</p>
+            <p class="complaint-status">Status</p>
+            <button class="authority-btn" id="send">Resolve</button>
+            </label>
+        </form>
+    </div>
+</body>
+<script src="authority.js" type="module"></script>
+<script>
+    /* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+    document.getElementById("admin-profile").style.width = "250px";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+    document.getElementById("admin-profile").style.width = "0";
+}
+function closeAuthorityForm() {
+    document.querySelector(".open-authority-form").style.display = "none";
+}
+</script>
+</html>

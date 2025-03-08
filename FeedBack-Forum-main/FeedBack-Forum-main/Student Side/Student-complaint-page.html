@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComplaintStudent</title>
+    <link rel="stylesheet" href="Student-complaint-styling.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+</head>
+
+<body>
+    <!--<nav class="side">
+            <div class="side-navbar">
+                <a href="#">Edit profile</a>
+                <a id="bottom-padding" href="#">Complaint History</a>
+                <a id="black" href="#">Log out</a>
+            </div>
+        </nav>-->
+
+<div class="horizontal-bar">
+    <img src="../Images/website-logo-transBG.png" height="50px" alt="" style="margin-left: 0px;">
+  <button class="home"><a href="../index.html">Home</a></button>
+  <button class="gethelp"><a href="../FAQ'S.html">Get Help</a></button>
+  <button class="about"><a href="../AboutUs.html">About Us</a></button>
+  
+</div>
+    <div id="admin-profile" class="sidepanel">
+        <a href="javascript:void(0)" class="close-toggle-btn" onclick="closeNav()">&times;</a>
+        <a href="#"><i class="fas fa-user-edit"></i>Edit Profile</a>
+        <a href="../FAQ'S.html"><i class="fa-solid fa-box-tissue"></i></i>Report Issue</a>
+        <a href="./complaintHistory.html"><i class="fas fa-history"></i> Complaint History</a>
+        <a href="../index.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    </div>
+    <button class="open-toggle-btn" onclick="openNav()">&#9776;</button>
+    <div class="form">
+        <p>Select Complaint domain: *
+            <select name="Complaint type" id="domain" class="js-type" required>
+                <option value="" id="select">--Select a Complaint Authority--</option>
+                <option value="Academics">Academics</option>
+                <option value="Administrative">Administrative(Management)</option>
+                <option value="Canteen">Canteen</option>
+                <option value="GymKhana">GymKhana</option>
+                <option value="Hostel">Hostel</option>
+                <option value="Hygiene">Hygiene</option>
+                <option value="Personal">Personal</option>
+                <option value="Grievances">Grievances(Suggestions)</option>
+            </select>
+        </p>
+        <p>Title of the Complaint: *<textarea class="js-title-complaint" name="title" id="title" cols="10" rows="10"
+                required></textarea></p>
+        <p>Write your Complaint: *<textarea class="js-complaint" name="Write" id="Write" cols="60" rows="10"
+                minlength="200"></textarea>
+            <label for="imageUpload">Choose an image to upload(If Required):</label>
+            <input type="file" class="js-image" id="imageUpload" name="imageUpload" accept="image/*">
+            <label for="anonymity">Keep my identity anonymous</label>
+            <input type="checkbox" class="js-anonymity" id="anonymity" name="anonymity">
+        <p><button class="js-submit" type="submit" required onclick="openPopup()">Submit</button></p>
+        <div class="popup" id="popup" aria-required="true">
+            <img src="/Images/finaltick.png" alt="">
+            <h2>Thank You!</h2>
+            <h3>Your complaint has been successfully submitted!</h3>
+            <button id="oKButton" type="button" onclick="closePopup()">Okay</button>
+        </div>
+    </div>
+</body>
+
+<!-- const popup = document.getElementById("popup");
+            
+            function openPopup() {
+                popup.classList.add("open-popup");
+            }
+            
+            function closePopup() {
+                popup.classList.remove("open-popup");
+            }-->
+
+
+<script>
+    function openNav() {
+        document.getElementById("admin-profile").style.width = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 (hide it) */
+    function closeNav() {
+        document.getElementById("admin-profile").style.width = "0";
+    }
+
+    const popup = document.getElementById("popup");
+
+    function openPopup() {
+        popup.classList.add("open-popup");
+    }
+
+    function closePopup() {
+        let popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+
+    let okButton = document.getElementById('okButton');
+
+    okButton.addEventListener('click', function () {
+        closePopup();
+        location.reload();
+    });
+
+</script>
+<script src="firebaseConfig-student.js" type="module"></script>
+<script src="studentTestFile.js" type="module"></script>
+
+</html>
